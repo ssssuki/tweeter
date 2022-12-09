@@ -16,3 +16,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+
+!["desktop-size-preview"](https://github.com/ssssuki/tweeter/blob/master/docs/desktop-preview.png?raw=true)
+
+
+!["tablet-size-preview"](https://github.com/ssssuki/tweeter/blob/master/docs/mobilepreview.png?raw=true)
