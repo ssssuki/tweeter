@@ -1,0 +1,45 @@
+ .tweetcontainer{
+  margin-top: 2em;
+ }
+ 
+ .tweet {
+  margin-top: 1em;
+  border: 3px solid black;
+  padding: 1em;
+ }
+
+ .tweet-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+ }
+
+ .avatar-container {
+  display: flex;
+ }
+
+ .avatar {
+  margin-right: 0.25em;
+ }
+
+ .tweet-footer {
+  font-size: small;
+  border-top: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .icon1{
+  display: inline-block;
+}
+
+.icon2{
+  display: inline-block;
+}
+
+.icon3{
+  display: inline-block;
+}
+
+ 

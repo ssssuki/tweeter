@@ -1,29 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    type="text/css" />
+
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/tweetcontainer.css" type="text/css" />
+
+  <link rel="stylesheet" href="/styles/desktopsize.css" media="(min-width: 768px)">
+
+
+
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/hover.js"></script>
+
+
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="navbar">
+    <div class="tweeter">
+      <span> tweeter</span>
+    </div>
+    <div class="slogan">
+      <span>Write a new tweet</span><br>
+      <span id="downarrow" class="fa-solid fa-angles-down"></span>
+    </div>
+  </nav>
+  <div class="'mainpage">
+
+
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    <main class="container">
+      <header class="main-header">
+        <div class="profile-pic">
+          <img src="/images/profile-hex.png">
+        </div>
+        <div class="Aligner">
+          <h2>Suki</h2>
+        </div>
+      </header>
+      <div class="tweetsection">
+        <section class="new-tweet">
+          <div style="display:none;" id="errormessage">
+            <p>content is too long or too short!</p>
+          </div>
+          <form id="new-tweet-form">
+            <textarea placeholder="What are you humming about" class="textarea" name="text" id="tweet-text"></textarea>
+            <div>
+              <button class="button" type="submit" id="btn">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="tweetcontainer">
+          <div class="tweets">
+            <article class="tweet">
+              <header class="tweet-header">
+                <div class="avatar-container">
+                  <img class="avatar" src="https://i.imgur.com/73hZDYK.png">
+                  <p>Taylor</p>
+                </div>
+                <p>@taylorHandle</p>
+              </header>
+              <p>All of the stars</p>
+              <footer class="tweet-footer">
+                <p>10 days ago</p>
+                <div class="icon-container">
+                  <div class="icon1">
+                    <i class="fa-solid fa-flag"></i>
+                  </div>
+                  <div class="icon2">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="icon3">
+                    <i class="fa-solid fa-retweet"></i>
+                  </div>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+
 </html>

@@ -1,0 +1,24 @@
+.main-header {
+  height: 410px;
+  width:100%;
+  margin-top: 2em;
+  /* padding-top: 120px; */
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(195, 240, 240);
+  width: 100%;
+}
+
+.profile-pic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2em;
+  background-color: rgb(195, 240, 240);
+
+
+}

@@ -1,0 +1,26 @@
+.tweeter {
+  font-size: 40px;
+}
+
+nav.navbar {
+  /* position: fixed; */
+  display: flex;
+  height: 120px;
+  width: 100%;
+  color: #FFFFFF;
+  background-color: rgb(195, 240, 240);
+  padding: 1.5em 1.5em;
+  font-family: "Bungee";
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#downarrow {
+  color: red;
+  margin-left: 75px;
+}
+
+.slogan{
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
