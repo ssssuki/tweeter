@@ -60,6 +60,8 @@ $(document).ready(function () {
   const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       $('.tweets').prepend(createTweetElement(tweet));
+      $('textarea').filter('[id*=tweet-text]').val('');
+
     }
   }
 
@@ -69,10 +71,16 @@ $(document).ready(function () {
     var serializedData = $(this).serialize();
     console.log(serializedData);
 
-    if (serializedData.length > 145 || serializedData.length === 5) {
-      $('#errormessage').slideDown('slow')
-    } else {
-      $('#errormessage').slideUp('slow')
+    if (serializedData.length > 145) {
+      $('#errormessage1').slideDown('slow')
+      $('#errormessage2').slideUp('slow')
+    }else if (serializedData.length === 5) {
+      $('#errormessage2').slideDown('slow')
+      $('#errormessage1').slideUp('slow')
+    }
+    else {
+      $('#errormessage1').slideUp('slow')
+      $('#errormessage2').slideUp('slow')
       let tweet = {};
       tweet["user"] = {
         "name": "Taylor",
@@ -85,6 +93,55 @@ $(document).ready(function () {
       tweet["created_at"] = timeago.format(Date.now());
       renderTweets([tweet]);
     }
+
+      $(function() {
+    $('.tweet').hover(function(){
+        $(this).css('box-shadow', '5px 10px');
+    },
+    function(){
+        $(this).css('box-shadow', '');
+    });
+});
+
+var originalColors = [];
+
+// Changes color on hover
+    $(function() {
+        $('.icon1').hover(function(){
+            originalColors[$(this).index('.icon1')] = $(this).css('color');
+            $(this).css('color', 'white');
+        },
+        function(){
+           $(this).css('color', originalColors[$(this).index('.icon1')]);
+        });
+    });
+
+
+    var originalColors = [];
+
+    // Changes color on hover
+        $(function() {
+            $('.icon2').hover(function(){
+                originalColors[$(this).index('.icon2')] = $(this).css('color');
+                $(this).css('color', 'white');
+            },
+            function(){
+               $(this).css('color', originalColors[$(this).index('.icon2')]);
+            });
+        });
+
+var originalColors = [];
+
+          // Changes color on hover
+              $(function() {
+                  $('.icon3').hover(function(){
+                      originalColors[$(this).index('.icon3')] = $(this).css('color');
+                      $(this).css('color', 'white');
+                  },
+                  function(){
+                     $(this).css('color', originalColors[$(this).index('.icon3')]);
+                  });
+              });
   });
 
   $("#load-more-tweets").on('click', function () {

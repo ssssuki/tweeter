@@ -41,6 +41,17 @@ $(document).ready(function () {
                      $(this).css('color', originalColors[$(this).index('.icon3')]);
                   });
               });
+
+          
+  $(function() {
+    $('.tweet').hover(function(){
+        $(this).css('box-shadow', '5px 10px');
+    },
+    function(){
+        $(this).css('box-shadow', '');
+    });
+});
         
 
+            
 })
