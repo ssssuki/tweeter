@@ -23,6 +23,10 @@ const tweetData = {
 // Test / driver code (temporary)
 $(document).ready(function () {
 
+  $.getJSON( "/tweets", function( data ) {
+    renderTweets(data);
+  });
+
 
   const createTweetElement = function (tweet) {
     let $tweet = `     
@@ -81,6 +85,10 @@ $(document).ready(function () {
     else {
       $('#errormessage1').slideUp('slow')
       $('#errormessage2').slideUp('slow')
+
+      let counter = $(this).parent().find(".counter");
+      counter.text(140);
+
       let tweet = {};
       tweet["user"] = {
         "name": "Taylor",
@@ -92,6 +100,11 @@ $(document).ready(function () {
       }
       tweet["created_at"] = timeago.format(Date.now());
       renderTweets([tweet]);
+
+      $.post( "/tweets", {
+        text: tweet.content.text,
+        user: tweet.user
+      });
     }
 
       $(function() {
