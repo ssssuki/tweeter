@@ -90,31 +90,23 @@ $(document).ready(function () {
       counter.text(140);
 
       let tweet = {};
-      tweet["user"] = {
-        "name": "Taylor",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@taylorHandle"
-      };
       tweet["content"] = {
         "text": serializedData.substring(5)
       }
       tweet["created_at"] = timeago.format(Date.now());
-      renderTweets([tweet]);
 
       $.post( "/tweets", {
         text: tweet.content.text,
         user: tweet.user
+      }).done(function() {
+        $('.tweets').html('');
+        $.getJSON( "/tweets", function( data ) {
+          renderTweets(data);
+        });
       });
-    }
 
-      $(function() {
-    $('.tweet').hover(function(){
-        $(this).css('box-shadow', '5px 10px');
-    },
-    function(){
-        $(this).css('box-shadow', '');
-    });
-});
+      
+    }
 
 var originalColors = [];
 
